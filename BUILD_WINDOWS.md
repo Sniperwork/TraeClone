@@ -111,15 +111,55 @@ Users will need to:
 
 ## Troubleshooting
 
+### Script Closes Immediately / Can't See Errors
+
+If the build script closes immediately without showing errors:
+
+1. **Run the diagnostic script first:**
+   ```cmd
+   check_build_requirements.bat
+   ```
+   This will check all requirements and stay open to show results.
+
+2. **Run from Command Prompt manually:**
+   - Open Command Prompt (cmd.exe)
+   - Navigate to the project folder: `cd C:\path\to\trae-agent`
+   - Run: `build_windows.bat`
+   - The window will stay open and show all errors
+
+3. **Check step-by-step manually:**
+   ```cmd
+   python --version
+   pip --version
+   pyinstaller --version
+   ```
+
 ### Build Errors
 
 **"Python is not installed or not in PATH"**
 - Install Python 3.12+ from https://www.python.org/
 - During installation, check "Add Python to PATH"
+- Restart your computer after installation
+- Verify: open Command Prompt and type `python --version`
+
+**"pyinstaller: command not found" or "pyinstaller is not recognized"**
+- Run: `pip install pyinstaller`
+- Or run: `python -m pip install pyinstaller`
+- Close and reopen Command Prompt after installation
 
 **"Module not found" errors during build**
 - Ensure all dependencies are installed: `pip install -e .`
 - Try updating pip: `python -m pip install --upgrade pip`
+- If specific module fails, install individually: `pip install [module-name]`
+
+**"error: Microsoft Visual C++ 14.0 or greater is required"**
+- Install Visual C++ Build Tools from https://visualstudio.microsoft.com/downloads/
+- Or install "Desktop development with C++" workload in Visual Studio
+
+**"Permission denied" errors**
+- Run Command Prompt as Administrator (right-click > Run as administrator)
+- Check if antivirus is blocking the build
+- Ensure you have write permissions in the project directory
 
 **Large executable size**
 - This is normal. PyInstaller bundles Python runtime and all dependencies
