@@ -78,6 +78,15 @@
       "temperature": 0.5,
       "top_p": 1,
       "max_retries": 20
+    },
+    "zai": {
+      "api_key": "your_zai_api_key",
+      "model": "glm-4.6",
+      "base_url": "https://api.z.ai/api/paas/v4",
+      "max_tokens": 4096,
+      "temperature": 0.5,
+      "top_p": 1,
+      "max_retries": 10
     }
   },
   "lakeview_config": {

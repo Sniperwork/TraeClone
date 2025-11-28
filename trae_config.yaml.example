@@ -22,6 +22,10 @@ model_providers:
     anthropic:
         api_key: your_anthropic_api_key
         provider: anthropic
+    zai:
+        api_key: your_zai_api_key
+        provider: zai
+        base_url: https://api.z.ai/api/paas/v4
 
 models:
     trae_agent_model:
