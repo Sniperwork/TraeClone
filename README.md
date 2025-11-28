@@ -27,8 +27,9 @@ For technical details please refer to [our technical report](https://arxiv.org/a
 ## 🚀 Installation
 
 ### Requirements
+- Python 3.12.x (NOT 3.13 - dependencies not yet compatible)
 - UV (https://docs.astral.sh/uv/)
-- API key for your chosen provider (OpenAI, Anthropic, Google Gemini, OpenRouter, etc.)
+- API key for your chosen provider (OpenAI, Anthropic, Google Gemini, OpenRouter, Z.AI, etc.)
 
 ### Setup
 

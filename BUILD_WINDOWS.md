@@ -5,7 +5,10 @@ This guide explains how to create a standalone Windows executable for Trae Agent
 ## Prerequisites
 
 - Windows 10/11 (64-bit)
-- Python 3.12 or higher (64-bit version)
+- **Python 3.12.x (64-bit version)** - IMPORTANT: Python 3.13 is NOT supported yet
+  - Download from: https://www.python.org/downloads/
+  - Make sure to select version 3.12.x (e.g., 3.12.0, 3.12.1, etc.)
+  - During installation, check "Add Python to PATH"
 - Internet connection for downloading dependencies
 
 ## Quick Build

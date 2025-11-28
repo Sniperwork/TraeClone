@@ -54,10 +54,14 @@ if exist "trae-agent.spec" (
 )
 
 echo.
-echo Checking Python version (requires 3.12+)...
-python -c "import sys; exit(0 if sys.version_info >= (3, 12) else 1)" 2>&1
+echo Checking Python version (requires 3.12.x, NOT 3.13)...
+python -c "import sys; v=sys.version_info; exit(0 if v.major==3 and v.minor==12 else 1)" 2>&1
 if errorlevel 1 (
-    echo [FAIL] Python version is too old. Need 3.12+
+    python -c "import sys; v=sys.version_info; print(f'[FAIL] Python {v.major}.{v.minor} detected. Need Python 3.12.x specifically')"
+    echo.
+    echo Python 3.13 is NOT supported yet due to dependency compatibility.
+    echo Please install Python 3.12.x from https://www.python.org/downloads/
+    echo.
     goto :end
 ) else (
     echo [OK] Python version is compatible
